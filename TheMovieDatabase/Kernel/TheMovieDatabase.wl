@@ -11,6 +11,15 @@
 BeginPackage["TheMovieDatabase`"];
 
 
+If[Not[StringQ[SystemCredential["TMDB"]]],
+Print["Calling the Movie Database API requires an API key."];
+Print["You must create an account at https://themoviedb.org"];
+Print["and request an API key."];
+Print["Once obtained, you must store the API as a SystemCredential in the Wolfram Language"];
+Print["SystemCredential[\"TMDB\"] = \"*** your api key ***\";"];
+]
+
+
 ToExpression/@ {"getCertifications","getChanges","getCollection","getCompany","getConfiguration","getCredits","getDiscover","getFind","getGenres","getKeyword","getLists","getMovie","getNetwork","getPerson","getProviders","getReview","getSearch","getTelevision","getTelevisionEpisode","getTelevisionEpisodeGroup","getTelevisionSeason","getTrending"};
 
 
